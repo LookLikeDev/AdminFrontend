@@ -1,3 +1,5 @@
 import React,{Component} from 'react';
 
-export default () => null;
+import Layout from './layout';
+
+export default () => <Layout/>;
