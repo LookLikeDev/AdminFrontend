@@ -43,7 +43,8 @@ export default class Main extends Component {
 		await this.setState({data,loading:false});
 	}
 	check_look = async (look,is_blocked) => {
-		await db.collection('looks').doc(look.id).set({is_blocked},{merge:true});
+		console.log(look,is_blocked);
+		await db.collection('looks').doc(look.id).set({is_checked:true,is_blocked},{merge:true});
 		let data = this.state.data;
 		data = data.filter(e => e.id!==look.id);
 		await this.setState({data});
